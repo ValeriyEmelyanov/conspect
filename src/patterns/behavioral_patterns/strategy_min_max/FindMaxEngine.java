@@ -1,6 +1,6 @@
 package patterns.behavioral_patterns.strategy_min_max;
 
-public class FindMax implements FindingStrategy {
+public class FindMaxEngine implements FindingStrategy {
 
     @Override
     public int find(int[] numbers) {

@@ -10,13 +10,12 @@ import java.util.Scanner;
  * If the array is empty, the Finder should return Integer.MAX_VALUE in case of finding the min value
  * and Integer.MIN_VALUE in case of finding the max value.
  */
-public class MinMaxFinder {
+public class FindingStrategyExample {
     public static void main(String[] args) {
         final Scanner scanner = new Scanner(System.in);
         final String[] elements = scanner.nextLine().split("\\s+");
-        int[] numbers = null;
 
-        numbers = new int[elements.length];
+        int[] numbers = new int[elements.length];
         for (int i = 0; i < elements.length; i++) {
             numbers[i] = Integer.parseInt(elements[i]);
         }
@@ -25,10 +24,10 @@ public class MinMaxFinder {
         Finder finder = null;
         switch (type) {
             case "MIN":
-                finder = new Finder(new FindMin());
+                finder = new Finder(new FindMinEngine());
                 break;
             case "MAX":
-                finder = new Finder(new FindMax());
+                finder = new Finder(new FindMaxEngine());
                 break;
             default:
                 break;
