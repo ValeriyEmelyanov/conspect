@@ -1,4 +1,4 @@
-package generics.simple;
+package generics.simple_generic_type;
 
 public class GenericType<T> {
 
