@@ -4,7 +4,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class CopyCharacters {
+public class CopyChars {
     public static void main(String[] args) {
         if (args.length != 2) {
             System.out.println("First argument - source file, second argument - target file.");
