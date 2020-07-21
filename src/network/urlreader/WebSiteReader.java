@@ -25,8 +25,6 @@ public class WebSiteReader {
                     System.out.println(nextLine);
                 }
 
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             } finally {

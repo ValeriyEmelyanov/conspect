@@ -4,7 +4,7 @@ import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
 
-public class FileDownload {
+public class UrlConnFileDownloader {
     public static void main(String[] args) {
         if (args.length < 2) {
             System.out.println("Incorrect parameters! Parameters: first - url, second - target.");
