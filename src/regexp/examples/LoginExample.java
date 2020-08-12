@@ -1,4 +1,4 @@
-package regexp.example_login;
+package regexp.examples;
 
 import java.util.Scanner;
 
@@ -10,7 +10,7 @@ import java.util.Scanner;
  *  the dollar sign $.
  * The length must be no less than 5 characters and no more than 12 characters.
  */
-public class Example {
+public class LoginExample {
     public static void main(String[] args) {
         final Scanner scanner = new Scanner(System.in);
         String login = scanner.nextLine();
