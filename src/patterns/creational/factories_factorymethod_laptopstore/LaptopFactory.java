@@ -1,4 +1,4 @@
-package patterns.creational.facrories_factorymethod_laptopstore;
+package patterns.creational.factories_factorymethod_laptopstore;
 
 abstract public class LaptopFactory {
 

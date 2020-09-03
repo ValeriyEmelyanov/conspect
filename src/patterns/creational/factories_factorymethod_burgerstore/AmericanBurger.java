@@ -1,4 +1,4 @@
-package patterns.creational.facrories_factorymethod_burgerstore;
+package patterns.creational.factories_factorymethod_burgerstore;
 
 public class AmericanBurger extends Burger {
     AmericanBurger() {
