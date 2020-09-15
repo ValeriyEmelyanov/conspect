@@ -1,9 +1,9 @@
-package regexp.replacement;
+package regexp.examples;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Example {
+public class ReplacingExample {
     public static void main(String[] args) {
         String src = "In JavaRush, Diego the best, Diego is Java God";
 
