@@ -1,6 +1,6 @@
 package patterns.behavioral_patterns.command_light;
 
-import patterns.behavioral_patterns.command_light.comand.Command;
+import patterns.behavioral_patterns.command_light.command.Command;
 
 /**
  * Invoker

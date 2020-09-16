@@ -1,8 +1,8 @@
 package patterns.behavioral_patterns.command_light;
 
-import patterns.behavioral_patterns.command_light.comand.Command;
-import patterns.behavioral_patterns.command_light.comand.LightOffCommand;
-import patterns.behavioral_patterns.command_light.comand.LightOnCommand;
+import patterns.behavioral_patterns.command_light.command.Command;
+import patterns.behavioral_patterns.command_light.command.LightOffCommand;
+import patterns.behavioral_patterns.command_light.command.LightOnCommand;
 
 public class HomeAutomationDemo {
     public static void main(String[] args) {
