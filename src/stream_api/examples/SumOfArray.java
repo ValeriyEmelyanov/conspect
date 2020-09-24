@@ -1,9 +1,9 @@
-package stream_api.sum_of_array;
+package stream_api.examples;
 
 import java.util.Arrays;
 import java.util.stream.IntStream;
 
-public class Example {
+public class SumOfArray {
     public static void main(String[] args) {
         int[] arr = new int[]{1, 10, 100};
 
