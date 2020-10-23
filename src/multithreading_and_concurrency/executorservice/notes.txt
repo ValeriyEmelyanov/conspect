@@ -1,0 +1,44 @@
+Your program will never stop while at least one executor still works.
+
+There are two methods for stopping executors:
+- void shutdown() waits until all running task completes
+  and prohibits submitting of new tasks;
+ -List<Runnable> shutdownNow() immediately stops all running tasks
+  and returns a list of the tasks that were awaiting execution.
+
+shutdown() does not block the current thread.
+To wait until the execution is complete, invoke awaitTermination(...) with the specified waiting time.
+
+    ExecutorService executor = Executors.newFixedThreadPool(4);
+    // submitting tasks
+    executor.shutdown();
+    boolean terminated = executor.awaitTermination(60, TimeUnit.MILLISECONDS);
+    if (terminated) {
+        System.out.println("The executor was successfully stopped");
+    } else {
+        System.out.println("Timeout elapsed before termination");
+    }
+
+You can take the number of available processors as the pool size:
+
+    int poolSize = Runtime.getRuntime().availableProcessors();
+    ExecutorService executor = Executors.newFixedThreadPool(poolSize);
+
+Types of executors:
+
+ - An executor with a single thread
+    ExecutorService executor = Executors.newSingleThreadExecutor();
+
+ - An executor with the growing pool
+    ExecutorService executor = Executors.newCachedThreadPool();
+
+ - An executor that schedules a task
+    ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
+   The method scheduleAtFixedRate submits a periodic Runnable task
+   that becomes enabled first after the given initDelay, and subsequently with the given period.
+    executor.scheduleAtFixedRate(() ->
+        System.out.println(LocalTime.now() + ": Hello!"), 1000, 1000, TimeUnit.MILLISECONDS);
+   This kind of executor also has a method named schedule
+   that starts a task only once after the given delay
+   and another method scheduleWithFixedDelay
+   that starts the task with a fixed wait after the previous one is completed.
