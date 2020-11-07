@@ -1,4 +1,4 @@
-package algorithms.reversing_strng_xor;
+package algorithms.reversing_string_xor;
 
 /**
  * Реверсирование строки.
