@@ -6,7 +6,7 @@ public class BubbleSortMain {
     public static void main(String[] args) {
         System.out.println(
                 Arrays.toString(
-                        bubbleSort(new int[] { 21, 23, 19, 30, 11, 28 })
+                        bubbleSort(new int[]{21, 23, 19, 30, 11, 28})
                 ));
     }
 
