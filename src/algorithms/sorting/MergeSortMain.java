@@ -2,7 +2,7 @@ package algorithms.sorting;
 
 import java.util.Arrays;
 
-public class mergeSortMain {
+public class MergeSortMain {
     public static void main(String[] args) {
         int[] array1 = {30, 21, 23, 19, 28, 11, 23};
         mergeSort(array1, 0, array1.length);
