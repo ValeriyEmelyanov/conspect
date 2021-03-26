@@ -14,7 +14,17 @@ import java.util.Scanner;
  * Выходные данные
  * Если в графе нет цикла, то вывести «NO».
  * Иначе вывести «YES» и затем перечислить вершины в порядке обхода цикла.
- * Тесты
+ * Решение:
+ * Для решения данной задачи используется поиск в глубину.
+ * Вершины будем отмечать следующим образом:
+ * 0 (белый) — мы еще не посещали вершину,
+ * 1 (серый) — посетили вершину и не вышли из нее,
+ * 2 (черный) — посетили вершину и вышли из неё.
+ * graph - сам граф, для проверки на цикличность воспользуемся visited,
+ * path - будем хранить порядок обхода графа.
+ * Если мы захотим посетить 1 (серую) вершину, то это будет означать,
+ * что мы отыскали цикл в этой вершине.
+ * Тесты:
  * №  Входные данные  Выходные данные
  * 1	2 2
  *      1 2            YES
@@ -36,10 +46,14 @@ import java.util.Scanner;
  *      3 6            NO
  */
 public class Solution {
+    public static final int WHITE = 0;
+    public static final int GREY = 1;
+    public static final int BLACK = 2;
+
     public static int n, m;
-    public static boolean flag = false;
+    public static boolean found = false;
     public static ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
-    public static ArrayList<Integer> used = new ArrayList<>();
+    public static ArrayList<Integer> visited = new ArrayList<>();
     public static ArrayList<Integer> path = new ArrayList<>();
 
     public static void main(String[] args) {
@@ -49,7 +63,7 @@ public class Solution {
         m = scanner.nextInt();
         for (int i = 0; i <= n; i++) {
             graph.add(new ArrayList<>());
-            used.add(0);
+            visited.add(WHITE);
         }
         // Считываем ребра и заполняем граф
         for (int i = 0; i < m; i++) {
@@ -62,7 +76,7 @@ public class Solution {
         // Проверяем вершины на наличие цикла
         checkNodes();
 
-        if (flag) {
+        if (found) {
             // Если цикл найден
             int i = path.size() - 2; // последняя вершина цикла
             int to = path.get(path.size() - 1); // вершина в которой зациклились
@@ -85,10 +99,10 @@ public class Solution {
      */
     static void checkNodes() {
         for (int i = 0; i <= n; i++) {
-            if (used.get(i) == 0) {
+            if (visited.get(i) == WHITE) {
                 // если не посещали вершину, то посещаем ее
                 dfs(i);
-                if (flag) {
+                if (found) {
                     // если нашли цикл, то останавливаемся
                     return;
                 }
@@ -101,27 +115,27 @@ public class Solution {
      * @param v вершина
      */
     static void dfs(int v) {
-        if (flag) {
+        if (found) {
             return; // если уже нашли цикл, то останавливаемся
         }
 
-        used.set(v, 1); // посещаем вершину
+        visited.set(v, GREY); // посещаем вершину
         path.add(v); // добавляем ее в порядок обхода графа
 
         for (int i = 0; i < graph.get(v).size(); i++) {
             int to = graph.get(v).get(i); // следующая вершина графа
-            if (used.get(to) == 1) { // если мы ее посетили, но не вышли из нее, значит мы нашли цикл
+            if (visited.get(to) == GREY) { // если мы ее посетили, но не вышли из нее, значит мы нашли цикл
                 path.add(to); // добавляем следующую вершину в порядок обхода графа
-                flag = true; // ставим индикатор, что мы нашли цикл и останавливаемся
+                found = true; // ставим индикатор, что мы нашли цикл и останавливаемся
                 return;
             }
             dfs(to); // если не посетили, то посещаем
-            if (flag) {
+            if (found) {
                 return; // если нашли цикл, то останавливаемся
             }
         }
 
-        used.set(v, 2); // если не нашли цикл, то выходим из вершины
+        visited.set(v, BLACK); // если не нашли цикл, то выходим из вершины
         path.remove(path.size() - 1);
     }
 }
