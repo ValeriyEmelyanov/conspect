@@ -53,7 +53,7 @@ public class Solution {
 
     public static int n, m;
     public static boolean found = false;
-    public static List<ArrayList<Integer>> graph = new ArrayList<>();
+    public static List<List<Integer>> graph = new ArrayList<>();
     public static List<Integer> visited = new ArrayList<>();
     public static List<Integer> path = new ArrayList<>();
 
