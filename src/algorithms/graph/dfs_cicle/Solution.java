@@ -1,6 +1,7 @@
 package algorithms.graph.dfs_cicle;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -52,9 +53,9 @@ public class Solution {
 
     public static int n, m;
     public static boolean found = false;
-    public static ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
-    public static ArrayList<Integer> visited = new ArrayList<>();
-    public static ArrayList<Integer> path = new ArrayList<>();
+    public static List<ArrayList<Integer>> graph = new ArrayList<>();
+    public static List<Integer> visited = new ArrayList<>();
+    public static List<Integer> path = new ArrayList<>();
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
