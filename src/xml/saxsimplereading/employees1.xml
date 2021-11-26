@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<company>
+    <name>IT-Heaven</name>
+    <offices>
+        <office floor="1" room="1">
+            <employees>
+                <employee name="Maksim" position="Middle Software Developer" />
+                <employee name="Ivan" position="Junior Software Developer" />
+                <employee name="Franklin" position="Junior Software Developer" />
+            </employees>
+        </office>
+        <office floor="1" room="2">
+            <employees>
+                <employee name="Herald" position="Middle Software Developer" />
+                <employee name="Adam" position="Middle Software Developer" />
+                <employee name="Leroy" position="Junior Software Developer" />
+            </employees>
+        </office>
+    </offices>
+</company>

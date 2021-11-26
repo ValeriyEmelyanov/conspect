@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<company>
+    <name>IT-Heaven</name>
+    <offices>
+        <office floor="1" room="1">
+            <employees>
+                <employee>
+                    <name>Maksim</name>
+                    <position>Middle Software Developer</position>
+                </employee>
+                <employee>
+                    <name>Ivan</name>
+                    <position>Junior Software Developer</position>
+                </employee>
+                <employee>
+                    <name>Franklin</name>
+                    <position>Junior Software Developer</position>
+                </employee>
+            </employees>
+        </office>
+        <office floor="1" room="2">
+            <employees>
+                <employee>
+                    <name>Herald</name>
+                    <position>Middle Software Developer</position>
+                </employee>
+                <employee>
+                    <name>Adam</name>
+                    <position>Middle Software Developer</position>
+                </employee>
+                <employee>
+                    <name>Leroy</name>
+                    <position>Junior Software Developer</position>
+                </employee>
+            </employees>
+        </office>
+    </offices>
+</company>
